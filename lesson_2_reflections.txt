@@ -1,0 +1,5 @@
+Git Relfections 2
+
+What happens when you initialize a repository? Why do you need to do it?
+
+	It creates the framework necessary for the project to become a git repository. 
