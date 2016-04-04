@@ -3,3 +3,89 @@ Git Relfections 2
 What happens when you initialize a repository? Why do you need to do it?
 
 	It creates the framework necessary for the project to become a git repository. 
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+	It sits in the middle of the two, offering a place to prep files from the staging area for the repository.
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+	Staging area should only ever contains the file(s) needed for one logical change, and it's easy to check by running a 
+	git diff --staged
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+	Since commits should only be one logical change if you needed to fully implement a feature that you aren't sure about it
+	make sense to create a new branch and then implment your series of commits on the new branch. 
+
+
+How do the diagrams help you visualize the branch structure?
+
+	It's nice to visually see where the branches split off from master, making it easy to tell what exactly is or isn't included
+	from master in the branch.
+	
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+	Merging the changes from one branch into the main branch pretty much joins them together. The diagram shows it so that
+	you can easily recognize where the branch split off and when it was rejoined. 
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+	If there are no conflicts than it makes sense to automatically merge. If there are conflicts than it's up the user to decide
+	the best way to resolve the conflicts. 
+
+    git init
+    git add
+    git status
+    staging area
+    working directory
+
+    git diff - working directory vs staging area
+    git diff --staged - staging area vs commit 1
+    git diff commmit 1 commit 2 - commit 1 vs commit 2
+
+    git reset --hard   - discards changes in your staging area and working directory
+
+    //Set global user name and password
+	git config --global user.name "Giovanni Galasso"
+	git config --global user.email giovanni_galasso@canb.uscourts.gov
+
+
+	//Check what bracnh you're on
+	git branch
+	//Create new branch
+	git branch name
+
+	//Visual representation of branches
+	git log --graph --oneline
+
+	//Creating new branches
+	git checkout -b new_branch_name
+	//Above command is equivalent to
+	git branch new_branch_name
+	git checkout new_branch_name
+
+	//Changes about committ and it's parent
+	git show
+
+	//Delete a branch label when no longer needed
+	git branch -d name_of_brance
+
+	//Merging example
+	git checkout easy-mode
+	git merge master easy-mode
+
+	//Show only some previous number of commits
+	git log -n 1
+
+	//check remote
+	git remote
+	//verbose remote
+	git remote -v
+
+	//Git remote adding
+	remote add origin git@github.com:ggalasso/reflections.git
+
+	//Pushing a branch
+	git push origin master
+	
