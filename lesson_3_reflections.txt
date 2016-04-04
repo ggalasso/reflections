@@ -3,4 +3,68 @@ When would you want to create a remote repository rather than keeping all your w
 	Lots of possibilities, working on multiple computers, working with multiple people, to backup your code,
 	to make your work public, and plenty of other scenarios. 
   
-  
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your 
+remote repository?
+
+	You might be working on something that got updated, but you want to finish your update before merging together the 
+	new changes. 
+
+
+Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+	Forks are strictly from one github repo to another. Cloning is used to clone a github repository to your local
+	workspace. Branches are used to take an existing repository and add some changes to it that you don't want to commit
+	and push right away to the master branch. Once you've implemented all of your features you can either merge with the
+	master branch or discard your branch and switch back to the master. You use forking when you want an independent
+	copy of a repository (for example if you don't have rights but want to modify someone elses project). Cloning is to
+	copy a repo from the Github servers down to your local machine, and you branch when you want to add new features
+	that will (perhaps temporarily) be seperate from the master branch.
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+
+	You can compare the local copy to the remote at some later point to see what changes have been made. 
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+	It would be harder to collaborate without using a tool like Github. It would be harder to track what is changed
+	and propose new changes. It would be harder to get the changes someone else made and incorporate them into your own
+	changes and it would also be harder to send changes to another user. You might have to send the files and mention
+	what was changed. 
+
+	/*-------------------------------------------
+	COMMANDS 
+	-------------------------------------------*/
+
+	//Pulling -- remote and branch
+	git pull origin master
+
+	//Cloning
+	git clone adress_from_github
+	//Check remote settings
+	git remote
+	git remote -v
+
+	//Update local copy with code on github for origin remote
+	git fetch origin
+	//Merge conflicts
+	git merge origin/master master
+	//Does the fetch and merge for you
+	git pull origin/master
+
+	//Compare versions
+	git log origin/master
+	git diff origin/master master
+
+	//Push up to master on github
+	git push origin master
+
+	//fast forward merges
+	A is in the path from B, A needs to be reachable by B in order to a fast forward merge
+
+	//Branch and push to a different branch
+	git branch different-branch
+	git checkout different-branch
+		//make some changes
+	git add some_file
+	git commit
+	git push origin different-branch
