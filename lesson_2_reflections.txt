@@ -10,30 +10,30 @@ How is the staging area different from the working directory and the repository?
 
 How can you use the staging area to make sure you have one commit per logical change?
 
-	Staging area should only ever contains the file(s) needed for one logical change, and it's easy to check by running a 
-	git diff --staged
+	Staging area should only ever contains the file(s) needed for one logical change, and it's easy to check by running a git diff --staged
 
 What are some situations when branches would be helpful in keeping your history organized? How would branches help?
 
-	Since commits should only be one logical change if you needed to fully implement a feature that you aren't sure about it
-	make sense to create a new branch and then implment your series of commits on the new branch. 
+	Since commits should only be one logical change if you needed to fully implement a feature that you aren't sure about it make sense to create a new branch and then implment your series of commits on the new branch. 
 
 
 How do the diagrams help you visualize the branch structure?
 
-	It's nice to visually see where the branches split off from master, making it easy to tell what exactly is or isn't included
-	from master in the branch.
+	It's nice to visually see where the branches split off from master, making it easy to tell what exactly is or isn't included from master in the branch.
 	
 What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
 
-	Merging the changes from one branch into the main branch pretty much joins them together. The diagram shows it so that
-	you can easily recognize where the branch split off and when it was rejoined. 
+	Merging the changes from one branch into the main branch pretty much joins them together. The diagram shows it so that you can easily recognize where the branch split off and when it was rejoined. 
 
 What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
 
-	If there are no conflicts than it makes sense to automatically merge. If there are conflicts than it's up the user to decide
-	the best way to resolve the conflicts. 
+	If there are no conflicts than it makes sense to automatically merge. If there are conflicts than it's up the user to decide the best way to resolve the conflicts. 
 
+	/* 
+	-------------------------------------------
+	COMMANDS 
+	-------------------------------------------
+	*/
     git init
     git add
     git status
