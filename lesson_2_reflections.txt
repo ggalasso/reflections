@@ -88,4 +88,8 @@ What are the pros and cons of Git’s automatic merging vs. always doing merges 
 
 	//Pushing a branch
 	git push origin master
-	
+
+	//Make a commit, first add then commit
+	git add filename
+	git commit
+	git push origin master
