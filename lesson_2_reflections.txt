@@ -46,7 +46,8 @@ What are the pros and cons of Git’s automatic merging vs. always doing merges 
     working directory
 
     git diff - working directory vs staging area
-    git diff --staged - staging area vs commit 1
+    //Compare staged area to last commit
+    git diff --staged
     git diff commmit 1 commit 2 - commit 1 vs commit 2
 
     git reset --hard   - discards changes in your staging area and working directory
@@ -74,7 +75,7 @@ What are the pros and cons of Git’s automatic merging vs. always doing merges 
 	git show
 
 	//Delete a branch label when no longer needed
-	git branch -d name_of_brance
+	git branch -d name_of_branch
 
 	//Merging example
 	git checkout easy-mode
@@ -98,3 +99,49 @@ What are the pros and cons of Git’s automatic merging vs. always doing merges 
 	git add filename
 	git commit
 	git push origin master
+
+	//Committ with message
+	git commit -m "some commit message"
+
+	//Commit all files from the directory even ones that havent been staged
+	git commit -am "some commit message"
+
+	//Remove the file from your working directory
+	rm file
+	//Stage the file's removal
+	git rm file
+
+	//Keep file in working directory but remove it from staging area
+	git rm --cached File
+
+	//Renaming files
+	git mv file new_file_name
+	//Or this series of commands
+	mv file new_file_name
+	git rm file
+	git add new_file_name
+
+	//Commit history with diff - only last 2 commits
+	git log -p -2
+	//Stats with each commit (e.g., number of lines added and deleted)
+	git log --stat
+	//One line log -- also can use short, full, fuller
+	git log --pretty=oneline
+	//Format it to what you want (e.g., commit and author)
+	git log --pretty=format:"%h - %an - %s"
+	
+	//Commits since a certain date
+	git log --since=2.weeks
+	git log --since=1.year
+	//With specific date
+	git log --since="2008-01-15"
+
+	//Add a 'git lg' command to bash_profile for cleaner output
+	//See: http://fredkschott.com/post/2014/02/git-log-is-so-2005/
+	git config --global alias.lg "log --color --graph --abbrev-commit
+           --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'"
+
+    //Between 2 dates
+    git log --after="2014-7-1" --before="2014-7-4"
+    //Commits by a specific author
+    git log --author="galasso"

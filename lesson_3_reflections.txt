@@ -86,13 +86,9 @@ approach have?
 	git pull upstream master
 
 
-	Git command review
-
-Compare two commits, printing each line that is present in one commit but not the other.
-	git diff will do this. It takes two arguments - the two commit ids to compare.
-Make a copy of an entire Git repository, including the history, onto your own computer.
-	git clone will do this. It takes one argument - the url of the repository to copy.
-Temporarily reset all files in a directory to their state at the time of a specific commit.
-	git checkout will do this. It takes one argument - the commit ID to restore.
-Show the commits made in this repository, starting with the most recent.
-	git log will do this. It doesn't take any arguments.
+	//Git check status
+	git status
+	//Shorthand -- A for staged, ?? for not tracked, M for modified, two columns, right hand is working tree and left is
+	//staging area. So an MM would indicate it was modified and staged, and then modified again. 
+	git status -s
+	git status --short
