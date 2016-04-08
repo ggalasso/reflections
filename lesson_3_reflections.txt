@@ -92,3 +92,47 @@ approach have?
 	//staging area. So an MM would indicate it was modified and staged, and then modified again. 
 	git status -s
 	git status --short
+
+	//Show more detail about remotes
+	git remote show origin
+	//Rename a remote
+	git remote rename oldname newname
+	//Remove remote
+	git remote rm name
+
+	/*---------------
+	Tagging
+	----------------*/
+	//show tags
+	git tag
+	//for specific tags with a v1.8.5 in them
+	git tag -l "v1.8.5*"
+	//Two types of tags, annotated and lightweight, they suggest using annotated in most instances
+	//Create annotated tag
+	git tag -a v1.4 -m "commit msg"
+	//Lightweight tag, don't use -a, -s, or -m options
+	git tag v1.4
+	//Tag commit after the fact
+	git tag -a v1.4 commitCheckSum#
+	//Tags have to be pushed to remote servers
+	git push origin [tagname]
+	//Push all tags to remote
+	git push origin --tags
+	//Checkout a specific tag and create a branch of it
+	git checkout -b [branchname] [tagname]
+
+	//Setting Git Aliases
+	git config --global alias.co checkout
+	git config --global alias.br branch
+	git config --global alias.ci commit
+	git config --global alias.st status
+	git config --global alias.unstage 'reset HEAD --'
+	//External command rather than git sub command
+	git config --global alias.visual '!gitk'
+
+
+
+
+
+
+
