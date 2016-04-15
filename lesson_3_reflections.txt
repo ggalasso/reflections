@@ -131,6 +131,22 @@ approach have?
 	git config --global alias.visual '!gitk'
 
 
+	//Git merge tool - show list of possible merge tools
+	git mergetool
+	//See branches that have been merged
+	git branch --merged
+	//Branches not merged
+	git branch --no-merged
+	//Trying to delete a branch that isn't merged will result in an error message
+	git branch -d branch_name
+	//Force delete it
+	git branch -D branch_name
+	//list all remote branches
+	git ls-remote
+	//Track a remote branch
+	git checkout --track remote_name/branch_name
+	//Tracking branches
+	git branch -vv
 
 
 
