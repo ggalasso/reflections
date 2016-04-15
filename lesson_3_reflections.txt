@@ -148,6 +148,9 @@ approach have?
 	//Tracking branches
 	git branch -vv
 
+	//Check for whitespace errors on commits (run before committing)
+	git diff --check
+
 
 
 
